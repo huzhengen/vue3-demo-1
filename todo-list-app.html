@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>demo3</title>
-
+  <title>todo-list-app</title>
 </head>
 
 <body>
@@ -17,7 +16,7 @@
         我们也需要为每个组件提供一个“key”，稍后再
         作详细解释。
       -->
-      <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+      <todo-item v-for="item in groceryList" :todo="item" :key="item.id"></todo-item>
     </ol>
   </div>
 
@@ -27,9 +26,9 @@
       data() {
         return {
           groceryList: [
-            { id: 0, text: '蔬菜' },
-            { id: 1, text: '奶酪' },
-            { id: 2, text: '随便其它什么人吃的东西' }
+            { id: 0, text: 'Vegetables' },
+            { id: 1, text: 'Cheese' },
+            { id: 2, text: 'Whatever else humans are supposed to eat' }
           ]
         }
       }
