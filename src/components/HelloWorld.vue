@@ -3,21 +3,21 @@
     <h1>{{ msg }}</h1>
     <div>
       <button
-          v-for="(item, index) in players"
-          :key="index"
-          @click="selectPlayer(index)"
+        v-for="(item, index) in data.players"
+        :key="index"
+        @click="data.selectPlayer(index)"
       >
         {{ item }}
       </button>
     </div>
     <p>
-      The moust favorite player is: <strong>{{ favoritePlayer }}</strong>
+      The moust favorite player is: <strong>{{ data.favoritePlayer }}</strong>
     </p>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent, ref} from "vue";
+import { defineComponent, reactive, ref } from "vue";
 
 export default defineComponent({
   name: "HelloWorld",
@@ -25,17 +25,16 @@ export default defineComponent({
     msg: String,
   },
   setup() {
-    const players = ref(["Messi", "Wulei", "Ronaldo"]);
-    const favoritePlayer = ref("Random");
-    const selectPlayer = (index: number) => {
-      console.log(players.value);
+    const data = reactive({
+      players: ["Messi", "Wulei", "Ronaldo"],
+      favoritePlayer: "Random",
+      selectPlayer: (index: number) => {
+        data.favoritePlayer = data.players[index];
+      },
+    });
 
-      favoritePlayer.value = players.value[index];
-    };
     return {
-      players,
-      selectPlayer,
-      favoritePlayer,
+      data,
     };
   },
 });
