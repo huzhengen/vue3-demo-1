@@ -3,9 +3,9 @@
     <h1>{{ msg }}</h1>
     <div>
       <button
-        v-for="(item, index) in players"
-        :key="index"
-        @click="selectPlayer(index)"
+          v-for="(item, index) in players"
+          :key="index"
+          @click="selectPlayer(index)"
       >
         {{ item }}
       </button>
@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, toRefs } from "vue";
+import {defineComponent, reactive, toRefs, watch} from "vue";
 
 interface DataProps {
   players: string[];
@@ -41,6 +41,10 @@ export default defineComponent({
 
     const refData = toRefs(data);
 
+    watch(refData.favoritePlayer, (newValue) => {
+      document.title = newValue;
+    });
+
     return {
       ...refData,
     };
@@ -58,6 +62,7 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
