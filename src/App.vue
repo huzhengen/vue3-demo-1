@@ -2,18 +2,21 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   <BasicExample/>
+  <Time></Time>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
 import BasicExample from './components/BasicExample.vue';
+import Time from './components/Time.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     HelloWorld,
-    BasicExample
+    BasicExample,
+    Time,
   }
 });
 </script>

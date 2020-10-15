@@ -2,6 +2,7 @@
   <button @click="increment">
     Count is: {{ state.count }}, double is: {{ state.double }}
   </button>
+  <hr>
 </template>
 
 <script>

@@ -13,6 +13,7 @@
     <p>
       The moust favorite player is: <strong>{{ favoritePlayer }}</strong>
     </p>
+    <hr>
   </div>
 </template>
 
