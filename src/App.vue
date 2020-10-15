@@ -2,7 +2,8 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   <BasicExample/>
-  <Time></Time>
+  <Time/>
+  <Dog/>
 </template>
 
 <script lang="ts">
@@ -10,6 +11,7 @@ import {defineComponent} from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
 import BasicExample from './components/BasicExample.vue';
 import Time from './components/Time.vue';
+import Dog from './components/Dog.vue';
 
 export default defineComponent({
   name: 'App',
@@ -17,6 +19,7 @@ export default defineComponent({
     HelloWorld,
     BasicExample,
     Time,
+    Dog,
   }
 });
 </script>
