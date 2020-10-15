@@ -41,7 +41,7 @@ export default defineComponent({
 
     const refData = toRefs(data);
 
-    watch(refData.favoritePlayer, (newValue) => {
+    watch(() => data.favoritePlayer, (newValue) => {
       document.title = newValue;
     });
 
